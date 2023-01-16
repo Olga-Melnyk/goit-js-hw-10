@@ -46,9 +46,9 @@ function onSearch() {
       const markupList = countries
         .map(
           country =>
-            `<li>
+            `<li class="country-list__item">
     <img src="${country.flags.svg}" alt="${country.name.official}" width="40", height="30">
-        <p>${country.name.official}</p>
+        <p class="country-list__subtitle">${country.name.official}</p>
 </li>`
         )
         .join('');
@@ -57,17 +57,21 @@ function onSearch() {
 
     function createCard(countries) {
       const country = countries[0];
-      const markupInfo = `<div><div>
+      const markupInfo = `<div><div class="country-info__box">
         <img src="${country.flags.svg}" alt="${
         country.name.official
       }" width="40", height="30" />
-        <h2>${country.name.official}</h2>
+        <h2 class="country-info__title">${country.name.official}</h2>
       </div>
-      <p><span>Capital:</span> ${country.capital}</p>
-      <p><span>Population:</span> ${country.population}</p>
-      <p><span>Languages:</span> ${Object.values(country.languages).join(
-        ', '
-      )}</p></div>`;
+      <p class="country-info__text"><span class="country-info__subtitle">Capital:</span> ${
+        country.capital
+      }</p>
+      <p class="country-info__text"><span class="country-info__subtitle">Population:</span> ${
+        country.population
+      }</p>
+      <p class="country-info__text"><span class="country-info__subtitle">Languages:</span> ${Object.values(
+        country.languages
+      ).join(', ')}</p></div>`;
       countryInfo.innerHTML = markupInfo;
     }
   }
