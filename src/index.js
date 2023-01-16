@@ -60,7 +60,7 @@ function onSearch() {
       const markupInfo = `<div><div class="country-info__box">
         <img src="${country.flags.svg}" alt="${
         country.name.official
-      }" width="40", height="30" />
+      }" width="60", height="40" />
         <h2 class="country-info__title">${country.name.official}</h2>
       </div>
       <p class="country-info__text"><span class="country-info__subtitle">Capital:</span> ${
